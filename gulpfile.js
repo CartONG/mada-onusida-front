@@ -56,7 +56,7 @@ gulp.task('concatCss', function() {
 })
 
 gulp.task('copyAssets', function() {
-  return gulp.src('src/assets/**/*')
+  return gulp.src(['src/assets/**/*', 'node_modules/mada-front-common/assets/**/*'])
   .pipe(gulp.dest('dist/assets'))
 })
 
