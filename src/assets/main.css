@@ -1,0 +1,230 @@
+body
+{
+    overflow:hidden;
+    width:100%;
+}
+
+#map {
+    width: 100%;
+    height: calc(100% - 50px);
+    top: 50px;
+    position: absolute;
+}
+
+a.underline {
+    text-decoration: underline;
+}
+
+#filters, #filters-button {
+    position: absolute;
+}
+
+#filters {
+    z-index: 99;
+    right: 20px;
+    top: 70px;
+    width: 300px;
+    height: calc(100% - 100px);
+}
+
+.filters-inner {
+    overflow-y: auto;
+    height: 100%;
+}
+
+#filters-button {
+    z-index: 98;
+}
+
+#filters-button, .mobileFilterHeader {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #filters {
+        /*display: none;*/
+        width: 100%;
+        top: 100%;
+        right: 0;
+        height: 60%;
+        -webkit-transition: top 0.3s;
+        transition:top 0.3s;
+        background-color: #fff;
+    }
+
+
+    #filters.opened {
+        top: 40%;
+    }
+
+    .filters-inner {
+        padding: 15px;
+    }
+
+    .mobileFilterHeader {
+        display: block;
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 100%;
+        padding: 15px;
+        background-color: #df9c46;
+        color: #fff;
+    }
+
+    .mobileFilterHeader-close {
+        float: right;
+        background-color: transparent;
+        border: 0;
+    }
+    .mobileFilterHeader-close span {
+        color: #fff;
+        text-shadow: none;
+        opacity: 1;
+        margin-left: 5px;
+    }
+
+
+    #filters-button {
+        display: block;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        width: calc(100% - 20px);
+        height: 50px;
+    }
+
+
+}
+
+
+.leaflet-popup-content-wrapper {
+    border-radius: 4px;
+}
+
+.popup-table tr td:first-child {
+  font-weight: bold;
+  text-align: right;
+}
+
+.popup-table td {
+  padding: 10px;
+}
+
+
+.panel {
+    border: 0;
+    background-color: transparent;
+}
+
+.panel-body {
+    background-color: rgba(255,255,255,.8)
+}
+
+.panel--outer {
+    box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+    -webkit-box-shadow: 3px 3px 10px rgba(0,0,0,.15);
+}
+
+.panel--inner {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.panel-group {
+    margin-bottom: 0;
+}
+
+.panel-group .panel+.panel {
+    margin-top: 0;
+    border-top: 1px solid #ccc;
+}
+
+.panel-heading {
+    background-color: #eee;
+    padding: 0;
+}
+
+
+.panel--inner .panel-heading {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.panel-title .panel-title-inner {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    padding: 10px 15px;
+}
+
+
+.panel-title a:not(.collapsed) .glyphicon-triangle-right {
+    display: none;
+}
+
+.panel-title a.collapsed .glyphicon-triangle-bottom {
+    display: none;
+}
+
+.panelCollapsedStatus {
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    font-size: 1rem;
+}
+.checkboxList label {
+    display: block;
+    line-height: 1.8rem;
+}
+
+label {
+    font-weight: normal;
+}
+
+.checkboxList .icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+#actionType .checkboxList .icon {
+    background-image: url('./images/actionType-sprites.svg');
+}
+
+#population .checkboxList .icon {
+    background-image: url('./images/population-sprites.svg');
+}
+
+
+.checkboxList-sectionTitle {
+    font-variant:small-caps;
+}
+
+
+.panelFilterStatus {
+    color: #999;
+    font-style: italic;
+}
+
+
+
+.popup-title {
+  font-size: 18px;
+}
+
+.popup-title, .popup-link {
+      margin: 14px;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+}
+
+.popup-truncate {
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
