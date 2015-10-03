@@ -16,6 +16,8 @@ function templatesForLocale(locale, translations, isDefaultLocale) {
   return gulp.src(`src/index.template.html`)
     .pipe(plugins.template(translations, {
       interpolate: /\[translation\:([\s\S]+?)\]/g,
+      evaluate: /(do_not_use)/g,
+      escape: /(do_not_use)/g
     }))
     .pipe(plugins.rename(function (renamePath) {
       renamePath.basename = 'index';

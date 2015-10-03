@@ -61,6 +61,63 @@
 
   <div id="map"></div>
 
+
+  <script type="text/template" class="js-tpl-popup">
+    <div class="popup-title">
+      Titre de l'action
+      <% if (data.status === 'completed') { %>
+        <span class="label label-default">terminée</span>
+      <% } else if (data.status === 'pending') { %>
+        <span class="label label-warning">en cours</span>
+      <% } %>
+
+    </div>
+
+    <table class="popup-table table table-striped">
+      <tr>
+        <td>ONG</td>
+        <td><%= data.nom_ong %></td>
+      </tr>
+      <tr>
+        <td>Opérateur</td>
+        <td><%= data.operateur %></td>
+      </tr>
+      <tr>
+        <td>Catégorie</td>
+        <td><%= data.categorie %></td>
+      </tr>
+      <tr>
+        <td>Public</td>
+        <td><%= data.public %></td>
+      </tr>
+    </table>
+    <div class="popup-link">
+      <a class="underline" href="#" target="_blank">Détails</a>
+    </div>
+  </script>
+
+  <script type="text/template" class="js-tpl-modal">
+    <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="{{trans.navigation_close}}"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><%= data.titre %></h4>
+          </div>
+          <div class="modal-body">
+            <%= data.description %>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">{{trans.navigation_close}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
+
+
+
   <script type="text/javascript" src="./vendors.js"></script>
   <script type="text/javascript" src="./assets/app.js"></script>
 </body>
+</html>
