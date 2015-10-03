@@ -1,0 +1,19 @@
+{
+  "name": "mada-onusida-front",
+  "version": "1.0.0",
+  "description": "Front-end part of the Onusida Madagascar project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CartONG/mada-onusida-front.git"
+  },
+  "author": "Erik Escoffier <erik.escoffier@gmail.com> (https://github.com/nerik/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CartONG/mada-onusida-front/issues"
+  },
+  "homepage": "https://github.com/CartONG/mada-onusida-front#readme"
+}
