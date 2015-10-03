@@ -2,7 +2,9 @@
 'use strict';
 
 var _ = require('lodash');
+var fs = require('fs');
 var merge = require('merge-stream');
+var browserSync = require('browser-sync');
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
@@ -30,9 +32,9 @@ gulp.task('templates', function () {
 
   config.locales.forEach(function(locale, index) {
     if (index === 0) {
-      defaultTranslations = require(`./src/translations/${config.locales[0]}.json`);
+      defaultTranslations = JSON.parse(fs.readFileSync(`./src/translations/${config.locales[0]}.json`, 'utf-8'));
     }
-    var translations = require(`./src/translations/${locale}.json`);
+    var translations = JSON.parse(fs.readFileSync(`./src/translations/${locale}.json`, 'utf-8'));
 
     // only override translations of default locale that exist in the other locale
     var mergedTranslations = _.merge(_.clone(defaultTranslations), translations);
@@ -41,3 +43,23 @@ gulp.task('templates', function () {
 
   return streams;
 })
+
+gulp.task('serve', ['build'], function() {
+  browserSync({
+    server: {
+      baseDir: './dist'
+    },
+    open: false,
+    port: 3333
+  });
+
+  gulp.watch(['./src/*.html', './src/translations/*'], ['templates']);
+
+  gulp.watch('./dist/**/*', function () {
+    browserSync.reload();
+  });
+});
+
+gulp.task('build', ['templates']);
+
+gulp.task('default', ['serve']);
