@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "quotes": [1,"single"],
+    "no-use-before-define": 1
+  },
+  "globals": {
+    "L": false,
+    "$": false,
+    "_": false
+  },
+  "ecmaFeatures": {
+    "templateStrings": true
+  }
+}

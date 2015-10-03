@@ -18,6 +18,7 @@
   "homepage": "https://github.com/CartONG/mada-onusida-front#readme",
   "devDependencies": {
     "browser-sync": "^2.4.0",
+    "eslint": "^1.6.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.0.0-rc.1",
