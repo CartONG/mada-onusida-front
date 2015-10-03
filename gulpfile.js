@@ -55,6 +55,11 @@ gulp.task('concatCss', function() {
   .pipe(gulp.dest('dist'))
 })
 
+gulp.task('copyAssets', function() {
+  return gulp.src('src/assets/**/*')
+  .pipe(gulp.dest('dist/assets'))
+})
+
 gulp.task('serve', ['build'], function() {
   browserSync({
     server: {
@@ -65,12 +70,13 @@ gulp.task('serve', ['build'], function() {
   });
 
   gulp.watch(['./src/*.html', './src/translations/*'], ['templates']);
+  gulp.watch(['./src/assets/main.css'], ['copyAssets']);
 
   gulp.watch('./dist/**/*', function () {
     browserSync.reload();
   });
 });
 
-gulp.task('build', ['templates','concatCss']);
+gulp.task('build', ['templates','concatCss', 'copyAssets']);
 
 gulp.task('default', ['serve']);
