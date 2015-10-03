@@ -44,6 +44,17 @@ gulp.task('templates', function () {
   return streams;
 })
 
+gulp.task('concatCss', function() {
+  return gulp.src([
+    'node_modules/bootstrap/dist/css/bootstrap.min.css',
+    'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
+    'node_modules/leaflet/dist/leaflet.css',
+    'node_modules/leaflet.markercluster/dist/leaflet.markercluster.css',
+    'node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'
+  ]).pipe(plugins.concat('vendors.css'))
+  .pipe(gulp.dest('dist'))
+})
+
 gulp.task('serve', ['build'], function() {
   browserSync({
     server: {
@@ -60,6 +71,6 @@ gulp.task('serve', ['build'], function() {
   });
 });
 
-gulp.task('build', ['templates']);
+gulp.task('build', ['templates','concatCss']);
 
 gulp.task('default', ['serve']);
