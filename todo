@@ -1,5 +1,3 @@
-- put onusida on a separate repo
-- simpler project structure
 - move main JS to npm dependency
 - use NPM for all JS dependencies (including leaflet markercluster). Use simple concatenation+minification instead of browserify.
 - use NPM for all CSS dependencies = add a concatenation step to gulpfile
@@ -7,4 +5,4 @@
 - simplify translations template markup ({{trans.action_NGO}} --> #translation:action_NGO)
 - use standalone SVGs for now (no iconfont, no svg spritesheet)
 - where to put shapefile --> geoJSON ?
-- standardized filters behaviours using data-attributes in the html 
+- standardized filters behaviours using data-attributes in the html
