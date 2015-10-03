@@ -44,7 +44,7 @@ gulp.task('templates', function () {
   return streams;
 })
 
-gulp.task('concatCss', function() {
+gulp.task('concatVendorCss', function() {
   return gulp.src([
     'node_modules/bootstrap/dist/css/bootstrap.min.css',
     'node_modules/bootstrap/dist/css/bootstrap-theme.min.css',
@@ -52,6 +52,17 @@ gulp.task('concatCss', function() {
     'node_modules/leaflet.markercluster/dist/leaflet.markercluster.css',
     'node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css'
   ]).pipe(plugins.concat('vendors.css'))
+  .pipe(gulp.dest('dist'))
+})
+
+gulp.task('concatVendorJs', function() {
+  return gulp.src([
+    'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/underscore/underscore-min.js',
+    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/leaflet/dist/leaflet.js',
+    'node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
+  ]).pipe(plugins.concat('vendors.js'))
   .pipe(gulp.dest('dist'))
 })
 
@@ -72,11 +83,14 @@ gulp.task('serve', ['build'], function() {
   gulp.watch(['./src/*.html', './src/translations/*'], ['templates']);
   gulp.watch(['./src/assets/main.css'], ['copyAssets']);
 
+  // only useful when working locally with npm link
+  gulp.watch(['node_modules/mada-front-common/assets/**/*'], ['copyAssets']);
+
   gulp.watch('./dist/**/*', function () {
     browserSync.reload();
   });
 });
 
-gulp.task('build', ['templates','concatCss', 'copyAssets']);
+gulp.task('build', ['templates','concatVendorCss','concatVendorJs','copyAssets']);
 
 gulp.task('default', ['serve']);
