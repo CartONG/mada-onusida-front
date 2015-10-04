@@ -1,0 +1,105 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "EPSG:4326"
+    }
+  },
+  "features": [
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.40586090087892,
+          -17.288528581299644
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "organisme": 6,
+        "description": "AVERTEM réunit étudiants et professionnels bénévoles passionnés d’ethnobotanique pour mener à bien des projets de solidarité.\r\nNotre objectif principal est l’amélioration des soins de santé primaire pour des populations ayant un accès aux soins et aux médicaments difficile et onéreux. Il s’agit notamment de valoriser l'utilisation de remèdes abordables et efficaces, comme les plantes médicinales.\r\nC’est par le biais d’enquêtes ethnopharmacologiques, et après analyse des données, qu’une sélection de plantes est réalisée, autour de pathologies ciblées. L’activité pharmacologique doit être démontrée, et la toxicité la plus faible possible.\r\nLe retour aux populations se concrétise par des conseils lors de formations sur l’identification botanique et sur l’utilisation des plantes médicinales (concernant le plus souvent le dosage). Des thèmes comme la cueillette, le séchage et la mise en culture sont également abordés.\r\nNous travaillons également sur des projets d’animations autour des plantes médicinales et sur la sensibilisation environnementale, avec le tournage puis la projection de court-métrages dans les villages, l'organisation d'une journée régionale de la plante en fin d'année (3e édition en 2014), des échanges de courrier entre Tampolo et Lille, des reboisements.\r\nGrâce aux équipes pluridisciplinaires sur le terrain, une place importante est accordée à l'approche anthropologique pour agir en accord et dans le respect des sociétés rencontrées, et ainsi assurer la pérennisation des projets.",
+        "duree": "En cours",
+        "illustration": "",
+        "localisation": "Ambavahala",
+        "responsable": 2,
+        "avancement": 2,
+        "titre": "Madagascar : des Hommes, des plantes, des remèdes",
+        "categories": [
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.74236297607422,
+          -22.05095939665973
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "organisme": 5,
+        "description": "http://www.woodenstock.org/\r\nhttp://www.facebook.com/woodenstock",
+        "duree": "En cours",
+        "illustration": "",
+        "localisation": "Tsarasoa, commune rurale de Vohitsaoka",
+        "responsable": 2,
+        "avancement": 2,
+        "titre": "134U – One Tree For You",
+        "categories": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.78709411621092,
+          -18.699911477011774
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "organisme": 4,
+        "description": "http://lesvoyagesdemyriam.fr/le-centre-patrakala/\r\nhttp://fr.ulule.com/solidarite-odadi/",
+        "duree": "En cours",
+        "illustration": "",
+        "localisation": "Morarano Beorana, commune rurale de Ankazondandy.",
+        "responsable": 2,
+        "avancement": 2,
+        "titre": "Centre Patrakala",
+        "categories": [
+          4
+        ]
+      }
+    },
+    {
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.36594963073728,
+          -12.331113826264716
+        ]
+      },
+      "type": "Feature",
+      "properties": {
+        "organisme": 3,
+        "description": "www.jungle-park-nature.com",
+        "duree": "En cours",
+        "illustration": "",
+        "localisation": "Andavakoera, commune rurale de Ramena",
+        "responsable": 2,
+        "avancement": 2,
+        "titre": "Jungle Park",
+        "categories": [
+          3
+        ]
+      }
+    }
+  ]
+}

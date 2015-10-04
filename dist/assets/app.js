@@ -76,8 +76,6 @@
     }
 
     function init() {
-        L.Icon.Default.imagePath = './images/leaflet';
-
         map = L.map('map', {
             center: [-18.766947, 49],
             zoom: 6,
