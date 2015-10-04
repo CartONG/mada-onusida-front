@@ -1,4 +1,5 @@
 /*eslint-globals L*/
+/*eslint-env browser*/
 
 (function () {
 
@@ -86,7 +87,7 @@
 
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
-        $.ajax('./testData2.json').done( renderMarkers );
+        $.ajax(window.appConfig.testDataPath).done( renderMarkers );
         // $.ajax('http://195.154.35.191:8000/geoactions/').done( renderMarkers );
 
         popupTpl = _.template( $('.js-tpl-popup').html() );
@@ -121,7 +122,7 @@
             updateFilters();
         });
 
-        $.getJSON( 'geo/faritra.json', function(geojson) {
+        $.getJSON( window.appConfig.faritraGeoJsonPath, function(geojson) {
             regionsGeoJson = geojson;
             regionsShapes = L.geoJson(geojson, {
                 onEachFeature: function(feature, layer) {
