@@ -1,6 +1,5 @@
 /*eslint-globals L*/
 /*eslint-env browser*/
-
 (function () {
 
     'use strict';

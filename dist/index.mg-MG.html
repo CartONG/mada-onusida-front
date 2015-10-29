@@ -133,7 +133,7 @@
               </a>
             </h4>
           </div>
-          <div id="population" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="populationHeading">
+          <div id="population" class="panel-collapse collapse" role="tabpanel" aria-labelledby="populationHeading">
             <div class="panel-body checkboxList js-filterFieldList">
               <div class="checkboxList-sectionTitle">Adultes</div>
               <label>
@@ -229,7 +229,7 @@
             </h4>
           </div>
 
-          <div id="province" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="provinceHeading">
+          <div id="province" class="panel-collapse collapse" role="tabpanel" aria-labelledby="provinceHeading">
             <div class="panel-body">
               <ul class="js-regions">
                 <!-- filled by app.js -->
@@ -253,7 +253,7 @@
               </a>
             </h4>
           </div>
-          <div id="date" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dateHeading">
+          <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
             <div class="panel-body">
 
               <div class="input-group">
@@ -282,36 +282,38 @@
 
 
   <script type="text/template" class="js-tpl-popup">
-    <div class="popup-title">
-      Titre de l'action
-      <% if (data.status === 'completed') { %>
-        <span class="label label-default">terminée</span>
-      <% } else if (data.status === 'pending') { %>
-        <span class="label label-warning">en cours</span>
-      <% } %>
+    <div class="js-popup" data-index="<%= internalIndex %>">
+      <div class="popup-title">
+        <%= data.titre %>
+        <% if (data.status === 'completed') { %>
+          <span class="label label-default">terminée</span>
+        <% } else if (data.status === 'pending') { %>
+          <span class="label label-warning">en cours</span>
+        <% } %>
 
-    </div>
+      </div>
 
-    <table class="popup-table table table-striped">
-      <tr>
-        <td>ONG</td>
-        <td><%= data.nom_ong %></td>
-      </tr>
-      <tr>
-        <td>Opérateur</td>
-        <td><%= data.operateur %></td>
-      </tr>
-      <tr>
-        <td>Catégorie</td>
-        <td><%= data.categorie %></td>
-      </tr>
-      <tr>
-        <td>Public</td>
-        <td><%= data.public %></td>
-      </tr>
-    </table>
-    <div class="popup-link">
-      <a class="underline" href="#" target="_blank">Détails</a>
+      <table class="popup-table table table-striped">
+        <tr>
+          <td>ONG</td>
+          <td><%= data.nom_ong %></td>
+        </tr>
+        <!-- <tr>
+          <td>Opérateur</td>
+          <td><%= data.operateur %></td>
+        </tr> -->
+        <tr>
+          <td>Catégorie</td>
+          <td><%= data.categorie %></td>
+        </tr>
+        <tr>
+          <td>Public</td>
+          <td><%= data.public %></td>
+        </tr>
+      </table>
+      <div class="popup-link">
+        <a class="underline js-openContentModal"  href="#">Détails</a>
+      </div>
     </div>
   </script>
 
@@ -327,7 +329,7 @@
             <%= data.description %>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">{{trans.navigation_close}}</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
           </div>
         </div>
       </div>
