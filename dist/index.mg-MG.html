@@ -133,7 +133,7 @@
               </a>
             </h4>
           </div>
-          <div id="population" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="populationHeading">
+          <div id="population" class="panel-collapse collapse" role="tabpanel" aria-labelledby="populationHeading">
             <div class="panel-body checkboxList js-filter-checkboxes" data-filter-checkboxes-field="population">
               <div class="checkboxList-sectionTitle">Adultes</div>
               <label>
@@ -256,7 +256,28 @@
           <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
             <div class="panel-body js-filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-start="date_fin">
 
-              <div class="input-group">
+              De :
+              <div class="dropdown js-filter-dates-start">
+                <button class="btn btn-default dropdown-toggle" type="button" id="date_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  [aucune date sélectionnée]
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="date_start">
+                  <li><a href="#"></a></li>
+                </ul>
+              </div>
+
+              à :
+              <div class="dropdown js-filter-dates-end">
+                <button class="btn btn-default dropdown-toggle" type="button" id="date_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  [aucune date sélectionnée]
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="date_start">
+                  <li><a href="#">Action</a></li>
+                </ul>
+              </div>
+              <!-- <div class="input-group">
                 <span class="input-group-addon" id="dateFrom">de</span>
                 <input type="text" class="form-control" placeholder="date" aria-describedby="dateFrom">
               </div>
@@ -264,7 +285,7 @@
               <div class="input-group">
                 <span class="input-group-addon" id="dateTo">à</span>
                 <input type="text" class="form-control" placeholder="date" aria-describedby="dateTo">
-              </div>
+              </div> -->
 
             </div>
           </div>
@@ -345,7 +366,8 @@
     L.Icon.Default.imagePath = './assets/images';
     window.appConfig = {
       testDataPath : 'assets/testData.json',
-      faritraGeoJsonPath : 'assets/faritra.json'
+      faritraGeoJsonPath : 'assets/faritra.json',
+      locale:'mg-MG'
     };
   </script>
 

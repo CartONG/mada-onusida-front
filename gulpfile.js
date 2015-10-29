@@ -40,6 +40,7 @@ gulp.task('templates', function () {
 
     // only override translations of default locale that exist in the other locale
     var mergedTranslations = _.merge(_.clone(defaultTranslations), translations);
+    mergedTranslations.locale = locale;
     streams.add(templatesForLocale(locale, mergedTranslations, index === 0));
   });
 
@@ -64,6 +65,7 @@ gulp.task('concatVendorJs', function() {
     'node_modules/bootstrap/dist/js/bootstrap.min.js',
     'node_modules/leaflet/dist/leaflet.js',
     'node_modules/leaflet.markercluster/dist/leaflet.markercluster.js',
+    'node_modules/moment/min/moment-with-locales.min.js',
   ]).pipe(plugins.concat('vendors.js'))
   .pipe(gulp.dest('dist'))
 })

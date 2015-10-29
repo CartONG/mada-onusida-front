@@ -7,7 +7,7 @@
     var regionsGeoJson;
     var regionsShapes;
 
-    var map, popupTpl, modalTpl, regionsListContainer, regionListItemTpl;
+    var map, popupTpl, modalTpl, regionsListContainer, regionListItemTpl, datePickerItemTpl;
     var markerClusters;
 
     var features = [];
@@ -91,9 +91,6 @@
 
 
     function initRegionsListEvents() {
-        regionsListContainer.find('a').each(function() {
-            // console.log(arguments)
-        });
         regionsListContainer.find('a').on('click', function (e) {
             var latlonStr = $(e.currentTarget).data('latlon');
             var latlon = latlonStr.split(',');
@@ -113,6 +110,25 @@
                 }.bind(this)
             }).addTo(map);
         });
+    }
+
+    function initDatePicker() {
+      var initialDate = moment('2010-01-01');
+      var today = moment();
+      var current = initialDate;
+
+      var startContainer = $('.js-filter-dates-start .dropdown-menu');
+      var endContainer = $('.js-filter-dates-end .dropdown-menu');
+
+      while(current.isBefore(today)) {
+        var start = datePickerItemTpl({
+          dateFormatted: current.format('MMMM YYYY'),
+          date: current.format('YYYY-MM-DD')
+        })
+        startContainer.append(start)
+        current.add(1, 'months');
+        console.log(current.format('MMMM YYYY'))
+      }
     }
 
     function openModal(link) {
@@ -139,6 +155,7 @@
 
         regionsListContainer = $('.js-regions');
         regionListItemTpl = _.template('<li><a href="#" data-latlon="<%= center %>"><%= name %></a></li>');
+        datePickerItemTpl = _.template('<li><a href="#" data-date="<%= date %>"><%= dateFormatted %></a></li>');
 
         // initialize filters count without actually filtering (geoJSON no there yet)
         updateFilters();
@@ -185,6 +202,9 @@
 
             initRegionsListEvents();
         } );
+
+        moment.locale(window.appConfig.locale);
+        if ($('.js-filter-dates').length) initDatePicker();
 
         $('#map').on('click', '.js-openContentModal', function(e) {
             e.preventDefault();

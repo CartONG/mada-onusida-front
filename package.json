@@ -34,6 +34,7 @@
     "leaflet-markercluster": "^0.2.0",
     "leaflet.markercluster": "^0.4.0",
     "mada-front-common": "git+https://github.com/CartONG/mada-front-common.git",
+    "moment": "^2.10.6",
     "underscore": "^1.8.3"
   }
 }
