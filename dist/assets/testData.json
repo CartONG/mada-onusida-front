@@ -23,6 +23,9 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nulla, euismod sit amet blandit quis, imperdiet et dolor. Etiam vitae orci sem. In vitae blandit augue, at iaculis nulla. Etiam accumsan tellus quis eros facilisis, quis efficitur felis mollis. Cras vitae rutrum tellus. Proin interdum cursus placerat. Fusce vulputate felis nec velit finibus vestibulum.",
         "type": [
           "plaidoyer","preservatifs"
+        ],
+        "population": [
+          "vih","perdus_de_vue"
         ]
       }
     },
@@ -42,6 +45,9 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nulla, euismod sit amet blandit quis, imperdiet et dolor. Etiam vitae orci sem. In vitae blandit augue, at iaculis nulla. Etiam accumsan tellus quis eros facilisis, quis efficitur felis mollis. Cras vitae rutrum tellus. Proin interdum cursus placerat. Fusce vulputate felis nec velit finibus vestibulum.",
         "type": [
           "plaidoyer"
+        ],
+        "population": [
+          "vih"
         ]
       }
     },
@@ -61,6 +67,9 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nulla, euismod sit amet blandit quis, imperdiet et dolor. Etiam vitae orci sem. In vitae blandit augue, at iaculis nulla. Etiam accumsan tellus quis eros facilisis, quis efficitur felis mollis. Cras vitae rutrum tellus. Proin interdum cursus placerat. Fusce vulputate felis nec velit finibus vestibulum.",
         "type": [
           "plaidoyer","ccc"
+        ],
+        "population": [
+
         ]
       }
     },
@@ -80,6 +89,9 @@
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus lectus nulla, euismod sit amet blandit quis, imperdiet et dolor. Etiam vitae orci sem. In vitae blandit augue, at iaculis nulla. Etiam accumsan tellus quis eros facilisis, quis efficitur felis mollis. Cras vitae rutrum tellus. Proin interdum cursus placerat. Fusce vulputate felis nec velit finibus vestibulum.",
         "type": [
           "preservatifs"
+        ],
+        "population": [
+          "vih"
         ]
       }
     }

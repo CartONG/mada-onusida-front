@@ -8,12 +8,12 @@
     var regionsShapes;
 
     var map, popupTpl, modalTpl, regionsListContainer, regionListItemTpl;
-    var markerClusters, geoJsonLayer;
+    var markerClusters;
 
     var features = [];
 
     function buildFeatures(data) {
-        geoJsonLayer = L.geoJson(data, {
+        L.geoJson(data, {
             onEachFeature: function (feature, layer) {
                 var popupData = feature.properties;
                 var popup = L.popup().setContent( popupTpl( {data: popupData, internalIndex: features.length }) );
@@ -35,10 +35,7 @@
     }
 
     function renderMarkers() {
-
-      // markerClusters.addLayer(geoJsonLayer);
       features.forEach(function(feature) {
-        console.log(feature.show)
         if (feature.show) {
           markerClusters.addLayer(feature.layer);
         } else {
@@ -48,15 +45,14 @@
       map.addLayer(markerClusters);
     }
 
-
-
     function filterMarkers(filters) {
       features.forEach(function(feature) {
         // flag feature for show/hide in later renderMarkers
         feature.show = filters.every(function(filter) {
           var featureFiltered = feature.properties[filter.field];
           var featureFilters = filter.values;
-          return _.intersection(featureFiltered, featureFilters).length
+          // ignore filter if field is empty     filter passes when field matches filter
+          return featureFiltered.length === 0 || _.intersection(featureFiltered, featureFilters).length
         })
       })
       renderMarkers();

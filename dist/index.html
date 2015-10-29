@@ -87,31 +87,31 @@
                 <abbr title="promotion et distribution de préservatifs (masculins, féminins, gels lubrifiants).">Promotion de préservatifs</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="communication">
                 <abbr title="Sensibilisation lors de manifestations ou évènements culturels, Unité Mobile Vidéo, Programme radiophonique, programme télévisé, etc...">Communication de masse</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="ist">
                 Prise en charge IST
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="depistage">
                 <abbr title="action de dépistage du virus et conseils">Dépistage</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="prise_en_charge">
                 <abbr title="Prise en charge IST et Prise en charge médicale des PVVIH (suivi biologique, traitement ARV, traitement des infections opportunistes). ">Prise en charge médicale</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="soutien">
                 <abbr title="soutiens des personnes infectées et affectées par le VIH (prise en charge psychosociale, appuis nutritionnels, appuis économiques, éducation thérapeutique, conseil, etc)">Soutien</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="coordination">
                 <abbr title="Coordination et suivi, évaluation">Coordination</abbr>
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="renforcement">
                 Renforcement des capacités
               </label>
             </div>
@@ -133,81 +133,81 @@
               </a>
             </h4>
           </div>
-          <div id="population" class="panel-collapse collapse" role="tabpanel" aria-labelledby="populationHeading">
-            <div class="panel-body checkboxList js-filterFieldList">
+          <div id="population" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="populationHeading">
+            <div class="panel-body checkboxList js-filter-checkboxes" data-filter-checkboxes-field="population">
               <div class="checkboxList-sectionTitle">Adultes</div>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="vih">
                 Personnes vivant avec le VIH
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="perdus_de_vue">
                 Perdus de vue
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="consommateurs_drogue">
                 Consommateurs de Drogues injectables
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="gay">
                 Homme ayant des rapports avec d’autres hommes
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="tds">
                 Travailleuses du Sexe
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="hcr">
                 Hommes à Comportements à Hauts Risques
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="clients_tds">
                 Clients des TdS
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="migrants">
                 Populations Migrantes
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="pop_carcerale">
                 Population Carcérale
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="armee">
                 Forces Armées
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="femmes_enceinte">
                 Femmes enceintes
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="violences">
                 Femmes victimes de violences sexuelles
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="religieux">
                 Leaders religieux ou traditionnels
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="sante">
                 Personnels de santé
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="autres">
                 Autres (Cercles associatifs, cercles religieux, etc)
               </label>
 
               <div class="checkboxList-sectionTitle">Jeunes</div>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="scolarises">
                 Jeunes scolarisés
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="non_scolarises">
                 Jeunes non-scolarisés
               </label>
               <label>
-                <input type="checkbox" checked>
+                <input type="checkbox" checked data-filter-checkbox-value="orphelins">
                 Orphelins et Enfants Vulnérables
               </label>
             </div>
@@ -254,7 +254,7 @@
             </h4>
           </div>
           <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
-            <div class="panel-body">
+            <div class="panel-body js-filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-start="date_fin">
 
               <div class="input-group">
                 <span class="input-group-addon" id="dateFrom">de</span>
