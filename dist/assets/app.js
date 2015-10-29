@@ -8,28 +8,91 @@
     var regionsShapes;
 
     var map, popupTpl, modalTpl, regionsListContainer, regionListItemTpl;
+    var markerClusters, geoJsonLayer;
 
     var features = [];
 
-    function renderMarkers(data) {
+    function buildFeatures(data) {
+        geoJsonLayer = L.geoJson(data, {
+            onEachFeature: function (feature, layer) {
+                var popupData = feature.properties;
+                var popup = L.popup().setContent( popupTpl( {data: popupData, internalIndex: features.length }) );
+                layer.bindPopup(popup);
+                feature.layer = layer;
+                feature.show = true;
+                features.push(feature);
+            }
+        });
 
-        var markerClusters = new L.MarkerClusterGroup({
+        // if (markerClusters) map.removeLayer(markerClusters);
+        markerClusters = new L.MarkerClusterGroup({
             showCoverageOnHover: false,
             maxClusterRadius: 40,
             spiderfyDistanceMultiplier: 2
         });
 
-        var geoJsonLayer = L.geoJson(data, {
-            onEachFeature: function (feature, layer) {
-                var popupData = feature.properties;
-                var popup = L.popup().setContent( popupTpl( {data: popupData, internalIndex: features.length }) );
-                layer.bindPopup(popup);
-                features.push(feature);
-            }
-        });
-        markerClusters.addLayer(geoJsonLayer);
-        map.addLayer(markerClusters);
+        renderMarkers();
     }
+
+    function renderMarkers() {
+
+      // markerClusters.addLayer(geoJsonLayer);
+      features.forEach(function(feature) {
+        console.log(feature.show)
+        if (feature.show) {
+          markerClusters.addLayer(feature.layer);
+        } else {
+          markerClusters.removeLayer(feature.layer);
+        }
+      })
+      map.addLayer(markerClusters);
+    }
+
+
+
+    function filterMarkers(filters) {
+      features.forEach(function(feature) {
+        // flag feature for show/hide in later renderMarkers
+        feature.show = filters.every(function(filter) {
+          var featureFiltered = feature.properties[filter.field];
+          var featureFilters = filter.values;
+          return _.intersection(featureFiltered, featureFilters).length
+        })
+      })
+      renderMarkers();
+    }
+
+    function updateFilters() {
+        function updateCheckboxList(name) {
+            var values = _.map( $('#' + name + ' input'), function(el) {return el.checked; });
+            $('[data-countof=' + name + ']').text( _.contains(values, false) ? _.compact(values).length + '/' + values.length : 'toutes' );
+        }
+        updateCheckboxList('actionType');
+        updateCheckboxList('population');
+    }
+
+    function getFilters() {
+        // build a list of filters activated in the panels
+        var filters = [];
+        var filterCheckboxes = $('.js-filter-checkboxes');
+        filterCheckboxes.each(function(index, el) {
+          var field = $(el).data().filterCheckboxesField;
+          var filter = {
+            type: 'checkboxes',
+            field: field,
+            values: []
+          }
+          $(el).find('input').each(function(inputIndex, inputEl) {
+            if ($(inputEl).is(':checked')) {
+              filter.values.push($(inputEl).data().filterCheckboxValue);
+            }
+          })
+          filters.push(filter);
+        });
+
+        return filters;
+    }
+
 
     function initRegionsListEvents() {
         regionsListContainer.find('a').each(function() {
@@ -56,16 +119,6 @@
         });
     }
 
-
-    function updateFilters() {
-        function updateCheckboxList(name) {
-            var values = _.map( $('#' + name + ' input'), function(el) {return el.checked; });
-            $('[data-countof=' + name + ']').text( _.contains(values, false) ? _.compact(values).length + '/' + values.length : 'toutes' );
-        }
-        updateCheckboxList('actionType');
-        updateCheckboxList('population');
-    }
-
     function openModal(link) {
         var index = $(link).parents('.js-popup').data().index;
         var data = features[index].properties;
@@ -84,8 +137,6 @@
 
         L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png').addTo(map);
 
-        $.ajax(window.appConfig.testDataPath).done( renderMarkers );
-        // $.ajax('http://195.154.35.191:8000/geoactions/').done( renderMarkers );
 
         popupTpl = _.template( $('.js-tpl-popup').html() );
         modalTpl = _.template( $('.js-tpl-modal').html() );
@@ -93,7 +144,7 @@
         regionsListContainer = $('.js-regions');
         regionListItemTpl = _.template('<li><a href="#" data-latlon="<%= center %>"><%= name %></a></li>');
 
-
+        // initialize filters count without actually filtering (geoJSON no there yet)
         updateFilters();
 
 
@@ -115,9 +166,13 @@
             $('.js-filters').removeClass('opened');
         });
 
-        $('.js-filterFieldList input').on('change', function () {
+        $('.js-filter-checkboxes input').on('change', function () {
             updateFilters();
+            filterMarkers(getFilters());
         });
+
+        $.ajax(window.appConfig.testDataPath).done( buildFeatures );
+        // $.ajax('http://195.154.35.191:8000/geoactions/').done( buildMarkers );
 
         $.getJSON( window.appConfig.faritraGeoJsonPath, function(geojson) {
             regionsGeoJson = geojson;
@@ -129,7 +184,6 @@
                         center: center.lat + ',' + center.lng
                     });
                     $(regionListItem).appendTo(regionsListContainer);
-                    // console.log(feature)
                 }
             });
 
