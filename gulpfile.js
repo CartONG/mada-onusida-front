@@ -83,7 +83,7 @@ gulp.task('serve', ['build'], function() {
   });
 
   gulp.watch(['./src/*.html', './src/translations/*'], ['templates']);
-  gulp.watch(['./src/assets/main.css'], ['copyAssets']);
+  gulp.watch(['./src/assets/**/*'], ['copyAssets']);
 
   // only useful when working locally with npm link
   gulp.watch(['node_modules/mada-front-common/assets/**/*'], ['copyAssets']);
