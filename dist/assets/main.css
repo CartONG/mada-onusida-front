@@ -215,6 +215,15 @@ label {
     font-style: italic;
 }
 
+.dropdown-menu {
+  max-height: 200px;
+  overflow-x: scroll;
+  height: auto;
+}
+
+.filter-dates .dropdown {
+  display: inline-block;
+}
 
 
 .popup-title {

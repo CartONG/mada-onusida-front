@@ -117,17 +117,28 @@
       var today = moment();
       var current = initialDate;
 
-      var startContainer = $('.js-filter-dates-start .dropdown-menu');
-      var endContainer = $('.js-filter-dates-end .dropdown-menu');
+      var startMonthContainer = $('.js-filter-dates-start-month .dropdown-menu');
+      var startYearContainer = $('.js-filter-dates-start-year .dropdown-menu');
+      var endMonthContainer = $('.js-filter-dates-end-month .dropdown-menu');
+      var endYearContainer = $('.js-filter-dates-end-year .dropdown-menu');
+
+      moment.months().forEach(function(month, index) {
+        var html = datePickerItemTpl({
+          dateFormatted: month,
+          date: index
+        });
+        startMonthContainer.append(html);
+        endMonthContainer.append(html);
+      });
 
       while(current.isBefore(today)) {
-        var start = datePickerItemTpl({
-          dateFormatted: current.format('MMMM YYYY'),
-          date: current.format('YYYY-MM-DD')
-        })
-        startContainer.append(start)
-        current.add(1, 'months');
-        console.log(current.format('MMMM YYYY'))
+        var html = datePickerItemTpl({
+          dateFormatted: current.format('YYYY'),
+          date: current.format('YYYY')
+        });
+        startYearContainer.append(html)
+        endYearContainer.append(html)
+        current.add(1, 'years');
       }
     }
 

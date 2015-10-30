@@ -254,38 +254,52 @@
             </h4>
           </div>
           <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
-            <div class="panel-body js-filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-start="date_fin">
+            <div class="panel-body js-filter-dates filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-start="date_fin">
 
-              De :
-              <div class="dropdown js-filter-dates-start">
-                <button class="btn btn-default dropdown-toggle" type="button" id="date_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  [aucune date sélectionnée]
-                  <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="date_start">
-                  <li><a href="#"></a></li>
-                </ul>
-              </div>
+              <p>
+                De :
+                <div class="dropdown js-filter-dates-start-month">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="date_start_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    [mois]
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="date_start_month">
+                    <!-- filled by app.js -->
+                  </ul>
+                </div>
+                <div class="dropdown js-filter-dates-start-year">
+                  <button class="btn btn-default dropdown-toggle" type="button" id="date_start_year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    [année]
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="date_start_year">
+                    <!-- filled by app.js -->
+                  </ul>
+                </div>
+              </p>
 
+
+              <p>
               à :
-              <div class="dropdown js-filter-dates-end">
-                <button class="btn btn-default dropdown-toggle" type="button" id="date_start" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  [aucune date sélectionnée]
+              <div class="dropdown js-filter-dates-end-month">
+                <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  [mois]
                   <span class="caret"></span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="date_start">
-                  <li><a href="#">Action</a></li>
+                <ul class="dropdown-menu" aria-labelledby="date_end_month">
+                  <!-- filled by app.js -->
                 </ul>
               </div>
-              <!-- <div class="input-group">
-                <span class="input-group-addon" id="dateFrom">de</span>
-                <input type="text" class="form-control" placeholder="date" aria-describedby="dateFrom">
+              <div class="dropdown js-filter-dates-end-year">
+                <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  [année]
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="date_end_month">
+                  <!-- filled by app.js -->
+                </ul>
               </div>
 
-              <div class="input-group">
-                <span class="input-group-addon" id="dateTo">à</span>
-                <input type="text" class="form-control" placeholder="date" aria-describedby="dateTo">
-              </div> -->
 
             </div>
           </div>
