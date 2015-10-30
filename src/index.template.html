@@ -245,7 +245,7 @@
           <div class="panel-heading" role="tab" id="dateHeading">
             <h4 class="panel-title">
               <a class="collapsed panel-title-inner" data-toggle="collapse" href="#date" aria-expanded="false" aria-controls="date">
-                Dates <span class="panelFilterStatus">jan. 2010 → jan. 2015</span>
+                Dates <span class="panelFilterStatus js-filter-dates-status">jan. 2010 → jan. 2015</span>
                 <span class="panelCollapsedStatus">
                   <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                   <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
@@ -254,13 +254,13 @@
             </h4>
           </div>
           <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
-            <div class="panel-body js-filter-dates filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-start="date_fin">
+            <div class="panel-body js-filter-dates filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-end="date_fin" data-filter-dates-format="YYYY-MM-DD">
 
               <p>
                 De :
                 <div class="dropdown js-filter-dates-start-month">
                   <button class="btn btn-default dropdown-toggle" type="button" id="date_start_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    [mois]
+                    <span class="js-lbl">[mois]</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="date_start_month">
@@ -269,7 +269,7 @@
                 </div>
                 <div class="dropdown js-filter-dates-start-year">
                   <button class="btn btn-default dropdown-toggle" type="button" id="date_start_year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    [année]
+                    <span class="js-lbl">[année]</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="date_start_year">
@@ -283,7 +283,7 @@
               à :
               <div class="dropdown js-filter-dates-end-month">
                 <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  [mois]
+                  <span class="js-lbl">[mois]</span>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="date_end_month">
@@ -292,7 +292,7 @@
               </div>
               <div class="dropdown js-filter-dates-end-year">
                 <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  [année]
+                  <span class="js-lbl">[année]</span>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="date_end_month">

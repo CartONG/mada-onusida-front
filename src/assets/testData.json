@@ -26,7 +26,9 @@
         ],
         "population": [
           "vih","perdus_de_vue"
-        ]
+        ],
+        "date_debut": "2011-01-01",
+        "date_fin": "2015-01-01"
       }
     },
     {
@@ -48,7 +50,8 @@
         ],
         "population": [
           "vih"
-        ]
+        ],
+        "date_debut": "2012-01-01"
       }
     },
     {
@@ -68,9 +71,9 @@
         "type": [
           "plaidoyer","ccc"
         ],
-        "population": [
-
-        ]
+        "population": [],
+        "date_debut": "2011-01-01",
+        "date_fin": "2013-01-01"
       }
     },
     {
