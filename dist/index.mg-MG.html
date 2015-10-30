@@ -9,6 +9,7 @@
 
   <link rel="stylesheet" type="text/css" href="./vendors.css">
   <link rel="stylesheet" type="text/css" href="./assets/main.css">
+  <link rel="stylesheet" type="text/css" href="./assets/onusida.css">
 </head>
 
 <body>
@@ -72,7 +73,7 @@
             </h4>
           </div>
 
-          <div id="actionType" class="panel-collapse collapse" role="tabpanel" aria-labelledby="actionTypeHeading">
+          <div id="actionType" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="actionTypeHeading">
             <div class="panel-body checkboxList js-filter-checkboxes" data-filter-checkboxes-field="type">
               <label>
                 <input type="checkbox" checked data-filter-checkbox-value="plaidoyer">
@@ -253,7 +254,7 @@
               </a>
             </h4>
           </div>
-          <div id="date" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="dateHeading">
+          <div id="date" class="panel-collapse collapse" role="tabpanel" aria-labelledby="dateHeading">
             <div class="panel-body js-filter-dates filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-end="date_fin" data-filter-dates-format="YYYY-MM-DD">
 
               <p>
@@ -314,6 +315,13 @@
 
 
   <div id="map"></div>
+
+  <a class="bottomLeftLogo" href="http://www.cartong.org/">
+    <img src="./assets/images/CartONG_logo.png" alt="CartONG">
+  </a>
+
+
+
 
 
   <script type="text/template" class="js-tpl-popup">

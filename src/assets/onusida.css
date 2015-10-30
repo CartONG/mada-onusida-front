@@ -1,0 +1,9 @@
+.bottomLeftLogo {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.bottomLeftLogo img {
+  width: 120px;
+}
