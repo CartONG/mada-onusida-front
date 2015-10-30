@@ -344,18 +344,27 @@
           <td>ONG</td>
           <td><%= data.nom_ong %></td>
         </tr>
-        <!-- <tr>
-          <td>Opérateur</td>
-          <td><%= data.operateur %></td>
-        </tr> -->
+        <tr>
+          <td>Localisation</td>
+          <td><%= data.localisation %></td>
+        </tr>
         <tr>
           <td>Catégorie</td>
-          <td><%= data.categorie %></td>
+          <td><%= data.type %></td>
         </tr>
         <tr>
-          <td>Public</td>
-          <td><%= data.public %></td>
+          <td>Population</td>
+          <td><%= data.population %></td>
         </tr>
+        <tr>
+          <td>Date début</td>
+          <td><% if (data.date_debut) print(moment(data.date_debut, 'YYYY-MM-DD').format('ll')) %></td>
+        </tr>
+        <tr>
+          <td>Date fin</td>
+          <td><% if (data.date_fin) print(moment(data.date_fin, 'YYYY-MM-DD').format('ll')) %></td>
+        </tr>
+
       </table>
       <div class="popup-link">
         <a class="underline js-openContentModal"  href="#">Détails</a>

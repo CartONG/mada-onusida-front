@@ -1,8 +1,2 @@
-- move main JS to npm dependency
-- use NPM for all JS dependencies (including leaflet markercluster). Use simple concatenation+minification instead of browserify.
-- use NPM for all CSS dependencies = add a concatenation step to gulpfile
-- remove fileInclude form build. Single index.html file.
-- simplify translations template markup ({{trans.action_NGO}} --> #translation:action_NGO)
-- use standalone SVGs for now (no iconfont, no svg spritesheet)
-- where to put shapefile --> geoJSON ?
-- standardized filters behaviours using data-attributes in the html
+- move gulpfile functionnality to mada-common
+- instead of setting locales in gulpfile, simply use what json files are found in src/translation
