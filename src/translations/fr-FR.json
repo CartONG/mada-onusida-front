@@ -1,4 +1,15 @@
 {
   "title": "Centre National de lutte contre le SIDA à Madagascar",
-  "navigation_close": "Fermer"
+  "navigation_close": "Fermer",
+  "navigation_map": "Carte",
+  "navigation_about": "À propos",
+  "navigation_signin": "Connexion",
+  "navigation_filter": "Filtrer",
+  "navigation_filters": "Filtres",
+  "filters_actionTypes": "Actions de lutte contre le SIDA",
+  "filters_populations": "Populations",
+  "filters_faritras": "Faritras",
+  "filters_dates": "Dates",
+  "filters_dates_from": "De",
+  "filters_dates_to": "À"
 }

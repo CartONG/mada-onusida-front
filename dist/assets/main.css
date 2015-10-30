@@ -11,6 +11,10 @@ body
     width:100%;
 }
 
+.navbar-nav img {
+    width: 30px;
+}
+
 #map {
     width: 100%;
     height: calc(100% - 50px);

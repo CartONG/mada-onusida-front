@@ -26,9 +26,11 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse navbar-right" aria-expanded="false" style="height: 1px;">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Carte</a></li>
-          <li><a href="#">À propos</a></li>
-          <li><a href="#about">Connexion</a></li>
+          <li class="active"><a href="#">[translation:navigation_map]</a></li>
+          <li><a href="#">[translation:navigation_about]</a></li>
+          <li><a href="#about">[translation:navigation_signin]</a></li>
+          <li><a href="index.html"><img alt="Français" src="./assets/images/locale_fr-FR.svg"></a></li>
+          <li><a href="index.mg-MG.html"><img alt="Malagasy" src="./assets/images/locale_mg-MG.svg"></a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
@@ -37,15 +39,15 @@
 
 
   <button id="filters-button" type="button" class="btn btn-warning js-showfilters" aria-hidden="true">
-    Filtrer <span class="glyphicon glyphicon-triangle-top" ></span>
+    [translation:navigation_filter] <span class="glyphicon glyphicon-triangle-top" ></span>
   </button>
 
   <div id="filters" class="panel panel--outer js-filters">
 
     <div class="mobileFilterHeader" aria-hidden="true">
-      Filtres
+      [translation:navigation_filters]
       <button class="mobileFilterHeader-close js-closeFilters">
-        Fermer
+        [translation:navigation_close]
         <span class="close">×</span>
       </button>
     </div>
@@ -61,7 +63,7 @@
           <div class="panel-heading" role="tab" id="actionTypeHeading">
             <h4 class="panel-title">
               <a data-toggle="collapse" href="#actionType" aria-expanded="true" aria-controls="actionType"  class="panel-title-inner">
-                [translation:title]
+                [translation:filters_actionTypes]
                 <span class="panelFilterStatus" data-countof="actionType"></span>
 
                 <span class="panelCollapsedStatus">
@@ -125,7 +127,7 @@
           <div class="panel-heading" role="tab" id="populationHeading">
             <h4 class="panel-title">
               <a class="collapsed panel-title-inner" data-toggle="collapse"  href="#population" aria-expanded="false" aria-controls="population" >
-                Populations
+                [translation:filters_populations]
                 <span class="panelFilterStatus" data-countof="population"></span>
                 <span class="panelCollapsedStatus">
                   <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
@@ -221,7 +223,7 @@
           <div class="panel-heading" role="tab" id="provinceHeading">
             <h4 class="panel-title">
               <a data-toggle="collapse" href="#province" aria-expanded="true" aria-controls="province" class="panel-title-inner">
-                Faritras
+                [translation:filters_faritras]
                 <span class="panelCollapsedStatus">
                   <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                   <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
@@ -246,7 +248,8 @@
           <div class="panel-heading" role="tab" id="dateHeading">
             <h4 class="panel-title">
               <a class="collapsed panel-title-inner" data-toggle="collapse" href="#date" aria-expanded="false" aria-controls="date">
-                Dates <span class="panelFilterStatus js-filter-dates-status">jan. 2010 → jan. 2015</span>
+                [translation:filters_dates]
+                <span class="panelFilterStatus js-filter-dates-status">jan. 2010 → jan. 2015</span>
                 <span class="panelCollapsedStatus">
                   <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
                   <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
@@ -258,10 +261,10 @@
             <div class="panel-body js-filter-dates filter-dates" data-filter-dates-field-start="date_debut" data-filter-dates-field-end="date_fin" data-filter-dates-format="YYYY-MM-DD">
 
               <p>
-                De :
+                [translation:filters_dates_from] :
                 <div class="dropdown js-filter-dates-start-month">
                   <button class="btn btn-default dropdown-toggle" type="button" id="date_start_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="js-lbl">[mois]</span>
+                    <span class="js-lbl">-</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="date_start_month">
@@ -270,7 +273,7 @@
                 </div>
                 <div class="dropdown js-filter-dates-start-year">
                   <button class="btn btn-default dropdown-toggle" type="button" id="date_start_year" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                    <span class="js-lbl">[année]</span>
+                    <span class="js-lbl">-</span>
                     <span class="caret"></span>
                   </button>
                   <ul class="dropdown-menu" aria-labelledby="date_start_year">
@@ -281,10 +284,10 @@
 
 
               <p>
-              à :
+              [translation:filters_dates_to] :
               <div class="dropdown js-filter-dates-end-month">
                 <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="js-lbl">[mois]</span>
+                  <span class="js-lbl">-</span>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="date_end_month">
@@ -293,7 +296,7 @@
               </div>
               <div class="dropdown js-filter-dates-end-year">
                 <button class="btn btn-default dropdown-toggle" type="button" id="date_end_month" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  <span class="js-lbl">[année]</span>
+                  <span class="js-lbl">-</span>
                   <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="date_end_month">
@@ -365,7 +368,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="{{trans.navigation_close}}"><span aria-hidden="true">&times;</span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="[translation:navigation_close]"><span aria-hidden="true">&times;</span></button>
             <h4 class="modal-title" id="myModalLabel"><%= data.titre %></h4>
           </div>
           <div class="modal-body">
