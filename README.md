@@ -36,3 +36,5 @@ https://github.com/CartONG/mada-front-common
 `gulp`
 
 - ourir un navigateur sur cette URL : http://localhost:3333/index.html
+
+Les modifications apportées rechargent automatiquement la page.
